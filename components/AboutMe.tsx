@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function AboutMe() {
@@ -18,12 +19,15 @@ export default function AboutMe() {
                     viewport={{ once: true }}
                     className="relative aspect-square max-w-md mx-auto md:mx-0 rounded-full overflow-hidden bg-neutral-900 border border-white/10 flex items-center justify-center group"
                 >
-                    <img
+                    <Image
                         src="/profile.jpeg"
                         alt="Aryak Moitra"
-                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                        fill
+                        className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                        priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 opacity-20 group-hover:opacity-0 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 opacity-20 group-hover:opacity-0 transition-opacity duration-500 z-10" />
                 </motion.div>
 
                 {/* Right: Content */}
